@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block header %}
+
+<h1 class='article_change'>Article Change</h1>
+
+{% endblock header %}
+
+
+
+
+{% block content %}
+
+
+<div>
+    <span>
+        <a class='change_enker' href="{% url 'article:list' %}">< Back to Articles </a>
+    </span>
+    
+</div>
+
+<div class="card" style="width: 50rem;">
+    
+
+    <div>
+        <form method="post">
+            {% csrf_token%}
+            {{ form.as_p }}
+
+            <pre>
+                <code>Modified_date: {{object.modified_date }}</code>
+                <code>Modified_date: {{object.created_date }}</code>
+            <pre>
+                <button type="submit" class="btn btn-success">Save</button>
+        </form>
+    </div>
+  </div>
+
+       
+        {% endblock content %}
+       

@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block title %}
+
+Recipe Create Form
+
+{% endblock title %}
+
+
+{% block header %}
+
+<h1 class='text-light'>Create New Recipe</h1>
+
+{% endblock header %}
+
+
+{% block content %}
+
+{% block primary_links %}
+<p><a href="{% url 'recipe:list' %}">Recipes</a>/ <span>Create</span>  </p>
+{% endblock  %}
+
+<div class="card  mb-3">
+    <div class="card-body">
+<div class="row d-flex justify-content-center mt-2">
+    <div class="col-md-6">
+        <form action="post">
+            {% csrf_token %} 
+            <div class="mb-3 row">
+                <label for="recipe_title" class="col-md-2 col-form-label">Title:</label>
+                <div class="col-sm-10">
+                  {{ form.title }}
+                </div>
+              </div>
+            <div class="mb-3 row">
+                <label for="recipe_image" class="col-md-2 col-form-label">Image:</label>
+                <div class="col-sm-10">
+                  {{ form.image }}
+                </div>
+            <div class="mb-3 mt-3 row">
+                    <label for="recipe_description" class="col-md-2 col-form-label">Description:</label>
+                    <div class="col-md-10">
+                      {{ form.description }}
+                    </div>
+            <div class="mb-3 mt-3 row">
+                        <label for="recipe_tags" class="col-md-2 col-form-label">Tags:</label>
+                        <div class="col-md-10">
+                          {{ form.tags }}
+                        </div>
+              </div>
+              <div class="buttons d-flex gap-2 justify-content-end">
+                <a type='submit' class='btn btn-primary' href="{% url 'recipe:list' %} ">Save and exit</a>
+                  <button type='submit' class='btn btn-primary opacity-75'>Save and continue</button>
+                <button type='reset' class='btn btn-warning'>Reset</button>
+              </div>
+        </form>
+        </div>
+    </div>
+    </div>
+</div>
+
+{% endblock content %}
+
+
+

@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block title %}
+
+{{ block.super }} Register
+
+{% endblock title %}
+
+
+
+{% block header %}
+
+<h1 class='text-light mt-3'>Register Page</h1>
+
+{% endblock header %}
+
+
+{% block content %}
+
+<div class="card mb-3" >
+    <div class="row justify-content-md-center">
+        <div class="col-md-6">
+            <form method='post'>
+                {% csrf_token %} 
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class='form-label'>Username</label>
+                    <div id="passwordHelpBlock" class="form-text text-danger">
+                        {{ form.username.errors}}
+                    </div>
+                    {{ form.username }}
+                    <div id="passwordHelpBlock" class="form-text">
+                        {{ form.username.help_text}}
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="inputPassword1" class="form-label">Password</label>
+                    <div id="passwordHelpBlock" class="form-text text-danger">
+                        {{ form.password1.errors}}
+                    </div>
+                  {{ form.password1 }}
+                  <div id="passwordHelpBlock" class="form-text">
+                    {{ form.password1.help_text}}
+                </div>
+
+        <label for="inputPassword2" class="form-label mt-3">Confirm Password</label>
+        <div id="passwordHelpBlock" class="form-text text-danger">
+            {{ form.password2.errors}}
+        </div>
+                    {{form.password2}}
+
+        <div id="passwordHelpBlock" class="form-text">
+            {{ form.password2.help_text}}
+        </div>
+
+        
+    </div>
+    
+    <div class="d-grid gap-2 col-6 mt-3 mx-auto">
+        <button class="btn btn-primary" type="submit">Register</button>
+        <a href="/" class='btn btn-secondary'>Go Back</a>
+      </div>
+    
+      <div class="d-grid gap-2 col-7 mt-3 mx-auto">
+        <p>If you have an account already <a href="{% url 'auth:login' %}">login</a> here.</p>
+      </div>
+            </form>
+        </div>
+    </div>
+    </div>
+
+{% endblock %}

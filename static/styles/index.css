@@ -1,0 +1,142 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image:url("/media/jonatan-pie-3l3RwQdHRHg-unsplash.jpg") ;
+    /* background-repeat: no-repeat; */
+}
+
+
+
+.contents{
+    list-style: none;
+}
+
+#card_sec {
+    background-color: white;
+    border-radius: 9px;
+    padding: 25px;
+    margin-right: 300px;
+    margin-top: 20px;
+}
+
+.back{
+    color: white;
+    font-size: 18px;
+    font-family: sans-serif;
+    
+}
+
+
+.h1_sec{
+    margin-top: 20px;
+    color: white;
+}
+
+#search_btn{
+    margin-left: 20px;
+}
+
+#navbarSupportedContent{
+    margin-left: 50px;
+}
+
+#navbarSupportedContent a{
+    font-size: 20px;
+}
+
+.top_text{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 45px;
+    color: white;
+}
+
+.navbar-brand{
+    font-size: 32px;
+    font-family: sans-serif;
+    color: rgb(8, 155, 106);
+    margin-left: 20px;
+    font-weight: bolder;
+    
+}
+
+#counter{
+    
+    font-size: 27px;
+    margin-left: 40px;
+    display: block;
+    width: 400px;
+    /* padding-top: 3px; */
+    font-family: sans-serif;
+    color: white;
+
+}
+
+.list{
+    list-style: none;
+    
+}
+
+.recipe_list{
+    color: #ffffff;
+    margin-top: 10px;
+}
+
+.card_delete{
+    background-color: white;
+}
+
+.article_delete{
+    color: white;
+    margin-top: 20px;
+}
+
+.h2_delete{
+    font-family: sans-serif;
+    font-size: 32 px;
+    margin-bottom: 20px;
+}
+
+#btn_delete a{
+    text-decoration: none;
+    color: white;
+}
+
+.delete_a{
+    color: #ffffff;
+    font-family: sans-serif;
+    font-size: 20px;
+}
+
+.article_change{
+    color: white;
+    margin-top: 20px;
+}
+
+.change_enker{
+    color: #ffffff;
+    font-family: sans-serif;
+    font-size: 20px;
+}
+
+.card{
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+    font-family: sans-serif;
+    font-size: 18px;
+}
+
+.card-title a{
+    text-decoration: none;
+    font-size: 25px;
+    color:  rgb(8, 155, 106);
+}
+
+.list li{
+    margin: 15px;
+}

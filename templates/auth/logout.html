@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}
+
+{{ block.super }} Logout
+
+{% endblock title %}
+
+
+{% block header %}
+<h1 class='text-light mt-3'> Log Out</h1>
+{% endblock header %}
+
+
+{% block content %}
+
+<div class="card col-8">
+    <div class="row justify-content-md-center align-items-center" >
+        <div class="col-md-8 d-flex gap-3">
+            <h1 class='d-block'> Are you want </h1> <h1 class='text-danger d-block'>LOG OUT</h1> <h1>?</h1>
+        </div>
+        <form method='post'>
+            {% csrf_token %}
+            <input type='submit' value='Yes, I am sure.' class='btn btn-danger  offset-3 mt-4'>
+            <a href="/" class='btn btn-secondary mt-4'>No,go back</a>
+        </form>
+    </div>
+</div>
+
+{% endblock content %}

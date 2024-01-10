@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block header %}
+
+<h1 class='h1_sec'>Article detail</h1>
+
+
+{% endblock %}
+
+
+{% block content %}
+
+<div>
+    <span >
+        <a class='back' href = "{% url 'article:list' %}"> < Back to Articles</a>
+
+    </span>
+    
+
+
+</div>
+
+
+
+
+<div class="card" >
+  <div class="card-body" id='card_sec'>
+      {% if object.image %}
+        <img width="100px" src="{{ object.image.url }}" class="card-img-top" alt="...">
+      {% endif %}
+      <h3 class="card-title mt-3">{{ object.title }}</h3>
+      <p class="card-text">{{ object.content }}</p>
+      <p>Modified date: <pre>{{ object.modified_date }}</pre> </p>
+      <p>Created date: <pre>{{ object.created_date }}</pre></p>
+      <a href="{% url 'article:change-form' object.id %}" class="btn btn-primary">Edit</a>
+      <a href="{% url 'article:delete' object.id %}" class="btn btn-danger">Delete</a>
+    </div>
+  </div>
+  
+  
+        
+        
+
+{% endblock content %}

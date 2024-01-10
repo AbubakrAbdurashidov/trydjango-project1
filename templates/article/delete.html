@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+
+{% block header %}
+
+<h1 class='article_delete'>
+    Article delete
+</h1>
+
+{% endblock header %}
+
+
+{% block content %}
+
+<div>
+    <span>
+        <a class="delete_a" href="{% url 'article:list' %}">< Back to Articles</a>
+    </span>
+</div>
+
+
+<div class="card" id="card_delete" style="width: 45rem;">
+    <div class="card-body">
+        
+        
+
+        <h2 class="h2_delete">Are you sure to delete "{{ object.title }}"?</h2>
+        <form action="{% url 'article:delete' object.id %}" method="post">
+            {% csrf_token %}
+            <button class="btn btn-danger" type="submit">Delete</button>
+            <button class="btn btn-success" id="btn_delete"><a href="{% url 'article:list' %}">No, thanks</a></button>
+        </form>
+    </div>
+  </div>
+
+       
+    
+        {% endblock content %}

@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% load static %}
+<link rel="stylesheet" href="{% static "styles/index.css"  %}">
+
+
+{% block header %}
+
+<h1 class='top_text'>Articles list</h1>
+
+{% endblock header %}
+
+
+
+
+
+
+
+{% block content %}
+        
+        <div class='col-6'>
+<form class="d-flex" role="search">
+    <input class="form-control md-2" name="q" type="search" autocomplite="off" placeholder="search here..." aria-label="Search">
+    <button class="btn btn-success" type="submit" id='search_btn'>Search</button>
+    <span id='counter'>{{ object_list.count }} objects found</span>
+  </form>
+</div>
+        
+
+        
+        <br>
+        
+        <div class="contents">
+        <ul class='list'>
+            {% for object in object_list %}
+                <li>
+                    
+
+                    <div class="card w-50">
+                        <div class="card-body">
+                          <h5 class="card-title"><a href="{% url 'article:detail' object.slug %}">{{object.title}}</a>
+                          </h5>
+                          <p class="card-text opacity-75">{{ object.content }}</p>
+                          <a href="{% url 'article:change-form' object.id %}" class="btn btn-success">Edit</a>
+                          <a href="{% url 'article:delete' object.id %}" class="btn btn-danger">Delete</a>
+                        </div>
+                      </div>
+                
+                </li>
+            {% endfor %}
+        </ul>
+      </div>
+{% endblock  %}
